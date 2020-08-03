@@ -15,7 +15,7 @@
     {% else %}
     <title>Ashion</title>
     {% endif %}
-    
+
 
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Cookie&display=swap" rel="stylesheet">
@@ -75,10 +75,40 @@
                 <div class="col-xl-6 col-lg-7">
                     <nav class="header__menu">
                         <ul>
+                            {% if title == "Home" %}
+                            <li class="active"><a href="{% url 'home' %}">Home</a></li>
+                            {% else %}
                             <li><a href="{% url 'home' %}">Home</a></li>
+                            {% endif %}
+
+                            {% if title == "Women’s" %}
+                            <li class="active"><a href="#">Women’s</a></li>
+                            {% else %}
                             <li><a href="#">Women’s</a></li>
+                            {% endif %}
+
+                            {% if title == "Men’s" %}
+                            <li class="active"><a href="#">Men’s</a></li>
+                            {% else %}
                             <li><a href="#">Men’s</a></li>
-                            <li class = "active"><a href="{% url 'shop'%}">Shop</a></li>
+                            {% endif %}
+
+                            {% if title == "Shop" %}
+                            <li class="active"><a href="{% url 'shop'%}">Shop</a></li>
+                            {% else %}
+                            <li><a href="{% url 'shop'%}">Shop</a></li>
+                            {% endif %}
+
+                            {% if title == "Product Details" or title == "Cart" or title == "Checkout" or title == "Blog Details" %}
+                            <li class="active"><a href="#">Pages</a>
+                                <ul class="dropdown">
+                                    <li><a href="{% url 'product-details'%}">Product Details</a></li>
+                                    <li><a href="{% url 'shop-cart'%}">Shop Cart</a></li>
+                                    <li><a href="{% url 'checkout'%}">Checkout</a></li>
+                                    <li><a href="{% url 'blog-details'%}">Blog Details</a></li>
+                                </ul>
+                            </li>
+                            {% else %}
                             <li><a href="#">Pages</a>
                                 <ul class="dropdown">
                                     <li><a href="{% url 'product-details'%}">Product Details</a></li>
@@ -87,8 +117,19 @@
                                     <li><a href="{% url 'blog-details'%}">Blog Details</a></li>
                                 </ul>
                             </li>
+                            {% endif %}
+
+                            {% if title == "Blog" %}
+                            <li class="active"><a href="{% url 'blog'%}">Blog</a></li>
+                            {% else %}
                             <li><a href="{% url 'blog'%}">Blog</a></li>
+                            {% endif %}
+
+                            {% if title == "Contact" %}
+                            <li class="active"><a href="{% url 'contact'%}">Contact</a></li>
+                            {% else %}
                             <li><a href="{% url 'contact'%}">Contact</a></li>
+                            {% endif %}
                         </ul>
                     </nav>
                 </div>
@@ -118,20 +159,20 @@
     <!-- Header Section End -->
 
     {% if title != "Home" %}
-        <!-- Breadcrumb Begin -->
-        <div class="breadcrumb-option">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="breadcrumb__links">
-                            <a href="{% url 'home' %}"><i class="fa fa-home"></i> Home</a>
-                            <span>{{ title }}</span>
-                        </div>
+    <!-- Breadcrumb Begin -->
+    <div class="breadcrumb-option">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="breadcrumb__links">
+                        <a href="{% url 'home' %}"><i class="fa fa-home"></i> Home</a>
+                        <span>{{ title }}</span>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- Breadcrumb End -->
+    </div>
+    <!-- Breadcrumb End -->
     {% endif %}
 
     {% block content %}
