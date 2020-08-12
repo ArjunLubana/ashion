@@ -1,3 +1,3 @@
 {
-    'SECRET_KEY' = '2_mt_##3_vjc-!&t1o8a92*ax%+8(n*-@^vl^jihsspo-^2!j7'
+    "SECRET_KEY": "2_mt_##3_vjc-!&t1o8a92*ax%+8(n*-@^vl^jihsspo-^2!j7"
 }

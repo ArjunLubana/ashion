@@ -3144,6 +3144,15 @@ ol {
 	width: 100%;
 }
 
+
+.login-form{
+	width: 50%;
+	margin: 0 auto;
+}
+
+.form-content *{
+	width:100%;
+}
 /*--------------------------------- Responsive Media Quaries -----------------------------*/
 
 @media only screen and (min-width: 1600px) and (max-width: 1900px) {
@@ -3318,9 +3327,6 @@ ol {
 		border-radius: 0;
 		background: transparent;
 		color: #111111;
-	}
-	.slicknav_nav a:hover {
-		border-radius: 0;
 		background: transparent;
 		color: #111111;
 	}
@@ -3389,6 +3395,15 @@ ol {
 	}
 	.header__right {
 		display: none;
+	}
+
+	.login-form{
+		width: 100%;
+		margin: 0 auto;
+	}
+	
+	.form-content *{
+		width:100%;
 	}
 }
 
@@ -3617,6 +3632,15 @@ ol {
 	.contact__content {
 		margin-bottom: 40px;
 	}
+
+	.login-form{
+		width: 100%;
+		margin: 0 auto;
+	}
+	
+	.form-content *{
+		width:100%;
+	}
 }
 
 /* Small Device = 320px */
@@ -3678,5 +3702,14 @@ ol {
 	.search-model-form input {
 		width: 100%;
 		font-size: 24px;
+	}
+
+	.login-form{
+		width: 100%;
+		margin: 0 auto;
+	}
+	
+	.form-content *{
+		width:100%;
 	}
 }

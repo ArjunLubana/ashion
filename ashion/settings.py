@@ -20,7 +20,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '2_mt_##3_vjc-!&t1o8a92*ax%+8(n*-@^vl^jihsspo-^2!j7'
+SECRET_KEY = os.environ.get('ASHION_SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -30,6 +30,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'users.apps.UsersConfig',
     'pages.apps.PagesConfig',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -118,3 +119,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# Django tries to access the profile after login. This redirects it to the Home page instead of the profile page
+LOGIN_REDIRECT_URL = 'home'
+
+#We add a Login URL to redirect someone with no access to certain pages in the Django App to login
+LOGIN_URL = 'login'
