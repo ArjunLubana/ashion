@@ -125,3 +125,6 @@ LOGIN_REDIRECT_URL = 'home'
 
 #We add a Login URL to redirect someone with no access to certain pages in the Django App to login
 LOGIN_URL = 'login'
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'

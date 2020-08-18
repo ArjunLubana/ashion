@@ -1,5 +1,5 @@
 from django.db import models
-
+from PIL import Image
 # Create your models here.
 
 
@@ -19,7 +19,7 @@ class Product(models.Model):
     price = models.DecimalField(max_digits=10 ,decimal_places=2)
     discount = models.DecimalField(max_digits=2, decimal_places=1)
     rating = models.IntegerField()
-    
+    image = models.ImageField(upload_to = 'product_images')
 
 
     def __str__(self):
